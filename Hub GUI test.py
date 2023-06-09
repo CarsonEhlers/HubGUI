@@ -407,7 +407,7 @@ else:
 
 # List of available Fonts that can be used
 with dpg.font_registry():
-    main_font = dpg.add_font("OpenSans-Regular.ttf", 50)
+    main_font = dpg.add_font("OpenSans-Regular.ttf", 40)
 
 # Global Theme
 with dpg.theme() as global_theme:
@@ -589,63 +589,63 @@ def save_statistics(sender, app_data, user_data):
 
 # Home Window
 with dpg.window(tag="Home Window", width=1920, height=1080):
-    dpg.draw_line((0, 100), (1920, 100), thickness=10, color=(77, 182, 255))
+    dpg.draw_line((0, 80), (1080, 80), thickness=10, color=(77, 182, 255))
 
     # Header Text
     t1 = dpg.add_text("Home", pos=(20, 20))
     dpg.bind_item_font(t1, main_font)
 
     # Add New Device Button
-    b2 = dpg.add_button(label="+ Add New Device", small=True, pos=(1560, 20), callback=add_new_device)
+    b2 = dpg.add_button(label="+ Add New Device", small=True, pos=(800, 20), callback=add_new_device)
     dpg.bind_item_font(b2, main_font)
 
     # Node Listbox
-    allNodes = dpg.add_listbox(items=nodeList["Name"], tag="Nodes", pos=(400, 200), width=1200, num_items=3,
+    allNodes = dpg.add_listbox(items=nodeList["Name"], tag="Nodes", pos=(190, 120), width=700, num_items=3,
                                callback=list_callback)
     dpg.bind_item_font(allNodes, main_font)
 
     # Titles for statistics
-    name = dpg.add_text("Name:", pos=(20, 380))
+    name = dpg.add_text("Name:", pos=(20, 300))
     dpg.bind_item_font(name, main_font)
-    temperature = dpg.add_text("Temperature:", pos=(20, 500))
+    temperature = dpg.add_text("Temperature:", pos=(20, 380))
     dpg.bind_item_font(temperature, main_font)
-    humidity = dpg.add_text("Humidity:", pos=(20, 620))
+    humidity = dpg.add_text("Humidity:", pos=(20, 460))
     dpg.bind_item_font(humidity, main_font)
-    pressure_title = dpg.add_text("Air Pressure:", pos=(20, 740))
+    pressure_title = dpg.add_text("Air Pressure:", pos=(20, 540))
     dpg.bind_item_font(pressure_title, main_font)
-    moisture_title = dpg.add_text("Soil Moisture:", pos=(20, 860))
+    moisture_title = dpg.add_text("Soil Moisture:", pos=(20, 620))
     dpg.bind_item_font(moisture_title, main_font)
-    light_title = dpg.add_text("Light Level:", pos=(20, 980))
+    light_title = dpg.add_text("Light Level:", pos=(20, 700))
     dpg.bind_item_font(light_title, main_font)
 
     # Data for statistics
-    name_data = dpg.add_text("", pos=(300, 380))
+    name_data = dpg.add_text("", pos=(300, 300))
     dpg.bind_item_font(name_data, main_font)
-    temperature_data = dpg.add_text("", pos=(300, 500))
+    temperature_data = dpg.add_text("", pos=(300, 380))
     dpg.bind_item_font(temperature_data, main_font)
-    humidity_data = dpg.add_text("", pos=(300, 620))
+    humidity_data = dpg.add_text("", pos=(300, 460))
     dpg.bind_item_font(humidity_data, main_font)
-    pressure_data = dpg.add_text("", pos=(300, 740))
+    pressure_data = dpg.add_text("", pos=(300, 540))
     dpg.bind_item_font(pressure_data, main_font)
-    moisture_data = dpg.add_text("", pos=(300, 860))
+    moisture_data = dpg.add_text("", pos=(300, 620))
     dpg.bind_item_font(moisture_data, main_font)
-    light_data = dpg.add_text("", pos=(300, 980))
+    light_data = dpg.add_text("", pos=(300, 700))
     dpg.bind_item_font(light_data, main_font)
 
     # Temporary Test Buttons
-    statistics_button = dpg.add_button(label="Set Statistics", small=True, pos=(560, 20), callback=statistics_window)
+    statistics_button = dpg.add_button(label="Set Statistics", small=True, pos=(250, 20), callback=statistics_window)
     dpg.bind_item_font(statistics_button, main_font)
 
 # New Device Window
 with dpg.window(tag="New Device Window"):
-    dpg.draw_line((0, 100), (1920, 100), thickness=10, color=(77, 182, 255))
+    dpg.draw_line((0, 80), (1080, 80), thickness=10, color=(77, 182, 255))
 
     # Header Text
     new_device_header = dpg.add_text("Add New Device", pos=(20, 20))
     dpg.bind_item_font(new_device_header, main_font)
 
     # Go Back Button
-    go_back_button = dpg.add_button(label="Go Back", width=675, height=225, pos=(1660, 20), small=True,
+    go_back_button = dpg.add_button(label="Go Back", width=675, height=225, pos=(950, 20), small=True,
                                     callback=go_back_callback)
     dpg.bind_item_font(go_back_button, main_font)
 
@@ -658,15 +658,15 @@ with dpg.window(tag="New Device Window"):
     dpg.bind_item_font(add_device_button, main_font)
 
 # Statistics Window
-with dpg.window(tag="Statistics Window", width=1920, height=1080):
-    dpg.draw_line((0, 100), (1920, 100), thickness=10, color=(77, 182, 255))
+with dpg.window(tag="Statistics Window", width=1080, height=800):
+    dpg.draw_line((0, 80), (1080, 80), thickness=10, color=(77, 182, 255))
 
     # Header Text
     title = dpg.add_text("Statistics Window", pos=(20, 20))
     dpg.bind_item_font(title, main_font)
 
     # Go Back Button
-    go_back_button = dpg.add_button(label="Go Back", width=675, height=225, pos=(1660, 20), small=True,
+    go_back_button = dpg.add_button(label="Go Back", width=675, height=225, pos=(950, 20), small=True,
                                     callback=go_back_callback)
     dpg.bind_item_font(go_back_button, main_font)
 
